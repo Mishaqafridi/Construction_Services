@@ -1,0 +1,109 @@
+﻿<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Contractor</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Employees">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Payment">Payment</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3" style="margin-top: 6%;">
+        <div class="row">
+            <div class="col-md-12" style="margin-bottom: 20px;">
+                <button class="btn btn-primary" align="center" data-toggle="modal" onclick="getdate();" data-target="#userModel">Create New</button>
+            </div>
+        </div>
+        <table id="tblEmployees" class="display nowrap" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Contractor Id</th>
+                    <th>Contractor Name</th>
+                    <th>Email</th>
+                    <th>Phone No</th>
+                    <th>Address</th>
+                     @* <th>Quotation Amount</th>
+                      <th>Received Amount</th>*@
+                       <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tblemployees_tbody">
+
+            </tbody>
+        </table>
+
+        <form action="" method='POST' name="Employeereg">
+            <div class="modal fade" id="userModel" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Contractor Registration</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group" style="display:none;" id="labelerrormsg">
+                                <label id="errorMessage"></label>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group" style="display:none;" id="ContractorId">
+                                    <input type="number" class="form-control" value="0" name="ContractorId" id="ContractorId" />
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="FullName">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="Full Name" name="ContractorName" id="ContractorName" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="Email">Email </label>
+                                    <input type="text" class="form-control" placeholder="Email" name="Email" id="Email" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Phone">Phone No</label>
+                                    <input type="text" class="form-control" placeholder="Phone No" name="Phone" id="Phone" />
+                                </div>
+                                 <div class="form-group">
+                                    <label for="Phone">Contractor Address</label>
+                                    <input type="text" class="form-control" placeholder="Contractor Address" name="ContractorAddress" id="ContractorAddress" />
+                                </div>
+
+                         
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" id="btnsubmit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+                </div>
+        </form>
+    </main>
+</div>
+<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Employee - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+@section Scripts {
+
+    <script src="~/js/employee.js" asp-append-version="true"></script>
+}

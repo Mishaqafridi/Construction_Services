@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Contraction Services</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/lib/bootstrap/dist/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    @RenderBody()
+
+    <script src="~/lib/jquery.min.js"></script>
+    <script src="~/lib/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery.dataTables.min.js"></script>
+    <script src="~/lib/dataTables.buttons.min.js"></script>
+    <script src="~/lib/jszip.min.js"></script>
+    @*<script src="~/lib/bootstrap/dist/js/pdfmake.min.js"></script>*@
+    <script src="~/lib/vfs_fonts.js"></script>
+    <script src="~/lib/buttons.html5.min.js"></script>
+    <script src="~/lib/buttons.print.min.js"></script>
+    <script src="~/lib/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

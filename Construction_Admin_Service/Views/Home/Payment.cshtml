@@ -1,0 +1,100 @@
+﻿<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Contractor</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Employees">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Payment">Payment</a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3" style="margin-top: 6%;">
+        <div class="row">
+            <div class="col-md-12" style="margin-bottom: 20px;">
+                <button class="btn btn-primary" align="center" data-toggle="modal" onclick="getdate();" data-target="#userModel">Create New</button>
+         
+            </div>
+        </div>
+
+
+        <form action="" method='POST' name="Paymentform">
+            <div class="modal fade" id="userModel" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Contractor Registration</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group" style="display:none;" id="labelerrormsg">
+                                <label id="errorMessage"></label>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group" style="display:none;" id="QuotationID">
+                                    <input type="number" class="form-control" value="0" name="QuotationID" id="QuotationID" />
+
+                                </div>
+                                   <div class="form-group">
+                                    <label for="Contractor">Contractor</label>
+                                    <select class="form-control" id="Contractor">
+                                        <option value="0">Select Contractor</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="FullName">Quotatin Detail</label>
+                                    <input type="text" class="form-control" placeholder="Quotatin Detail" name="QuotatinDetail" id="QuotatinDetail" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="Email">Quotation Amount </label>
+                                    <input type="text" class="form-control" placeholder="Quotation Amount" name="QuotationAmount" id="QuotationAmount" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Phone">Ammount Paid</label>
+                                    <input type="text" class="form-control" placeholder="Ammount Paid" name="AmmountPaid" id="AmmountPaid" />
+                                </div>
+                                
+
+                         
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" id="btnsubmit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+                </div>
+        </form>
+    </main>
+</div>
+<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Employee - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+@section Scripts {
+          <script src="~/js/employee.js" asp-append-version="true"></script>
+
+     
+
+}
